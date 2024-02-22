@@ -1,0 +1,160 @@
+package com.repeat.controller;
+import java.util.Scanner;
+
+public class RepeatControllerDemo {
+	 
+		// 반친구들의 이름을 5명 입력받고 출력하는 기능 구현하기 
+		// public void inputStudent()
+	public void inputStudent() {
+		//1. 이름 입력받기 0
+		//2. 5명만 입력받기 
+		//3. 입력받은 이름 한번에 출력
+		
+		String name="";
+		Scanner sc =new Scanner(System.in);
+		for(int i=0; i<=4; i++) {
+			System.out.println("이름 입력: ");
+			name+=sc.next();
+		}
+		System.out.println(name+" ");
+	}
+		
+		// 사용자에게 숫자를 5개 입력받고 입력받은 숫자의 총합을 출력하기
+		// public void sumNumber()	
+		
+		//1. 사용자에게 숫자 입력받기
+		//2. 5개만 입력받기
+		//3. 입력받은 값 더하여 
+		//4. 출력받기
+		
+		public void sumNumber() { //결과값 마다 띄어쓰기 되겨면 어떻게 해야할지 생각해보기
+			Scanner sc =new Scanner(System.in);
+			int sum=0;
+			int num;
+			for(int i=0; i<=4; i++) {
+				System.out.println("정수 입력: ");
+				num=sc.nextInt();
+				sum+=num;
+			}System.out.println(sum+" ");
+		}
+		//사용자에게  메세지를 입력받고 출력하는 기능 구현
+		// 사용자가 exit라는 메시지를 입력할때까지 입력받고,
+		// public void inputMsg()
+		
+		//1. 메시지 입력받기
+		//2. 계속해서 입력받고 
+		//3. exit라고 입력받으면 멈추기
+		
+		public void inputMsg() { //여기서 exit 같이 출력 안되게 하려면 어떻게 해야할지 생각해보기 
+			
+			Scanner sc = new Scanner(System.in);
+			String total="";
+			String msg="";
+			for(msg=""; !msg.equals("exit");) {
+				System.out.println("메시지 입력해라: ");
+				msg+=sc.nextLine();
+			}
+			if(msg.equals("exit")) {
+				
+			}
+		}
+		//for문 응용해보기 
+		//1부터 사용자가 입력한 수까지 출력하기 
+		
+		//1. 사용자에게 숫자 받기
+		//2. 1부터 입력받은 수 출력
+		
+		public void forApp() {
+			
+			Scanner sc = new Scanner(System.in);
+			System.out.println("정수 입력: ");
+			int num = sc.nextInt();
+			for(int i=1; i<=num; i++) {
+				System.out.println(i);
+			}
+		}
+			
+		//사원정보를 입력 받는 기능 구현하기
+		//3명의 사원의 정보를 입력받고 출력하는 기능
+		//입력정보: 이름, 나이, 성별, 급여, 보너스(실수)
+		//입력한 정보를 한번에 출력하게 구현 
+		//예) 유병승 19 남 100 0.2
+		//   홍길동 24 남 50 0.3
+		//버전업 사용자가 원하는 만큼 사원정보 입력 후 출력하기 
+		//public void empInputData()
+		
+		public void empInputData() {
+			
+			//1. 사원 정보입력
+			//2. 사원수 Scanner -> num 
+			//토탈값 선언 -> total 
+			//3. 사원이름 입력 -> name
+			//나이 제한 
+			//사원정보 받기 
+			//사원정보 토탈값에 저장 
+			//입력한 정보 한번에 출력
+			
+			Scanner sc =new Scanner(System.in);
+			
+			String total=""; char gender=' '; double height=0.0;
+			System.out.println("입력할 사원수: ");
+			int num = sc.nextInt();
+			
+			for(int i=0; i<num; i++) {
+				System.out.println("사원이름: ");
+				String name=sc.next();
+				
+				System.out.println("나이: ");
+				int age=sc.nextInt();
+				if(age<=18) {
+					System.out.println("18세 이하는 입력할 수 없습니다.");
+				}else {
+					System.out.println("성별(남/여): ");
+					gender=sc.next().charAt(0);
+					System.out.println("키: ");
+					height=sc.nextDouble();				
+				}
+				total+=(name+age+gender+height);
+				System.out.println(total);
+			}
+			}			
+		
+		public void forApp2() {
+		//숫자에 규칙이 있는 경우 for문을 활용해서 기능을 구현할 수 있음
+				//String name="유병승";
+				//name.chatAt(0); -> 유 첫번째 글자
+				//name.chatAt(1); -> 병 두번째 글자
+				//name.chatAt(2); -> 승 세번째 글자
+			
+		
+			//트와이스인피니트소녀시대티아라 중 인피니트 한글자씩 출력하기 (총15글자)
+			
+			String name="트와이스인피니트소녀시대티아라";
+			
+			for(int i=4; i<8; i++) {  //인피니트만 뽑기 
+					char ch=name.charAt(i);
+					System.out.println(ch);
+			}		
+			//test 문자열에 대문자가 있는지 확인하는 기능
+			
+			String test ="abCDef";
+			String result="없다";
+			for(int i=0; i<6; i++) {
+				char ch = test.charAt(i);
+				//System.out.println("ch");
+				if('A'<=ch&&ch<='Z') {
+					//System.out.println(ch+"는 대문자");
+					result="있다";
+					break;
+				}
+			}
+			System.out.println(result);
+			
+			
+			
+		}
+		
+		
+
+				
+}
